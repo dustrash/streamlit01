@@ -22,7 +22,7 @@ ref3 = db.reference()
 with st.form("my_form"):
     name = st.text_input("name")
     input1 = st.text_input("user")
-    input2 = st.text_input("password")
+    input2 = st.text_input("password", type="password")
 
 
 
