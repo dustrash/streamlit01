@@ -16,7 +16,7 @@ if not firebase_admin._apps:
         'databaseURL': 'https://teststreamlit-3fc73-default-rtdb.firebaseio.com/'
     })
 
-ref = db.reference("/users")
+ref = db.reference()
 with st.form("my_form"):
     name = st.text_input("name")
     id = st.text_input("user")
@@ -28,7 +28,7 @@ with st.form("my_form"):
     # Every form must have a submit button.
     submitted = st.form_submit_button("Submit")
     if submitted:
-        ref.set({f"{id}":f"{password}, {name}"})
+        ref.push({f"{id}":f"{password}, {name}"})
 
 
 
