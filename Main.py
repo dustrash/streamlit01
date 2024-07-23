@@ -17,12 +17,10 @@ if not firebase_admin._apps:
     })
 
 ref = db.reference()
-ref2 = db.reference()
-ref3 = db.reference()
 with st.form("my_form"):
     name = st.text_input("name")
-    input1 = st.text_input("user")
-    input2 = st.text_input("password", type="password")
+    id = st.text_input("user")
+    password = st.text_input("password", type="password")
 
 
 
@@ -30,7 +28,7 @@ with st.form("my_form"):
     # Every form must have a submit button.
     submitted = st.form_submit_button("Submit")
     if submitted:
-        ref.push({"{0}".format(name):"({0}, {1})".format(input1, input2)})
+        ref.push({f"{id}":f"({password}, {name})"})
 
 
 
