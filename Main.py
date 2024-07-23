@@ -13,7 +13,7 @@ from firebase_admin import db
 if not firebase_admin._apps:
     cred = credentials.Certificate('secrets.json')
     firebase_admin.initialize_app(cred, {
-        'databaseURL': 'https://streamlit-92189-default-rtdb.firebaseio.com/'
+        'databaseURL': 'https://teststreamlit-3fc73-default-rtdb.firebaseio.com/'
     })
 
 ref = db.reference("/users")
@@ -28,7 +28,7 @@ with st.form("my_form"):
     # Every form must have a submit button.
     submitted = st.form_submit_button("Submit")
     if submitted:
-        ref.push({f"{id}":f"({password}, {name})"})
+        ref.set({f"{id}":f"{password}, {name}"})
 
 
 
