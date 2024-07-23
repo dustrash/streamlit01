@@ -16,7 +16,7 @@ if not firebase_admin._apps:
         'databaseURL': 'https://streamlit-92189-default-rtdb.firebaseio.com/'
     })
 
-ref = db.reference()
+ref = db.reference("/users")
 with st.form("my_form"):
     name = st.text_input("name")
     id = st.text_input("user")
